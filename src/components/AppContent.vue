@@ -1,6 +1,10 @@
 <script>
+
+import AppFeature from './AppFeature.vue';
+
 export default {
     name: 'AppContent',
+    components: { AppFeature }
 }
 </script>
 
@@ -8,6 +12,7 @@ export default {
     <div id="content">
         <h2>Content goes here</h2>
     </div>
+    <AppFeature></AppFeature>
 </template>
 
 <style lang="scss">
