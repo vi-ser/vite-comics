@@ -81,7 +81,7 @@ footer {
     display: flex;
     justify-content: space-between;
 
-    height: 370px;
+    height: 345px;
     padding: 40px $containerPadding;
     background-image: url('/img/footer-bg.jpg');
     background-size: cover;

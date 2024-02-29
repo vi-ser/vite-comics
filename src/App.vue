@@ -1,15 +1,17 @@
 <script>
 import AppContent from './components/AppContent.vue';
 import AppNav from './components/AppNav.vue';
-import AppIconSection from './components/AppIconSection.vue'
+import AppFeature from './components/AppFeature.vue'
 import AppFooter from './components/AppFooter.vue';
+import AppCTA from './components/AppCTA.vue';
 
 export default {
   components: {
     AppNav,
     AppContent,
-    AppIconSection,
+    AppFeature,
     AppFooter,
+    AppCTA,
   }
 }
 </script>
@@ -17,8 +19,9 @@ export default {
 <template>
   <AppNav></AppNav>
   <AppContent></AppContent>
-  <AppIconSection></AppIconSection>
+  <AppFeature></AppFeature>
   <AppFooter></AppFooter>
+  <AppCTA></AppCTA>
 </template>
 
 <style lang="scss">

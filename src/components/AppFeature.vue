@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'AppIconSection',
+    name: 'AppFeature',
     data() {
         return {
             icons: [
