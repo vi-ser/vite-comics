@@ -37,7 +37,7 @@ nav {
 
     background-color: white;
 
-    padding: 0 320px;
+    padding: 0 $containerPadding;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
