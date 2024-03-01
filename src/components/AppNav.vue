@@ -14,14 +14,16 @@ export default {
 
 <template>
     <nav>
-        <div id="logo-container">
-            <img src="/img/dc-logo.png" alt="">
+        <div class="container">
+            <div id="logo-container">
+                <img src="/img/dc-logo.png" alt="">
+            </div>
+            <ul>
+                <li v-for="currentLink, index in links" :class="index == activeLinkIndex ? 'active' : ''">
+                    {{ currentLink }}
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li v-for="currentLink, index in links" :class="index == activeLinkIndex ? 'active' : ''">
-                {{ currentLink }}
-            </li>
-        </ul>
     </nav>
 </template>
 
@@ -29,19 +31,19 @@ export default {
 @use '../styles/variables' as *;
 
 nav {
-    display: flex;
-    justify-content: space-between;
 
     height: 118px;
-    align-items: center;
 
     background-color: white;
 
-    padding: 0 $containerPadding;
+    font-family: 'Barlow Condensed', sans-serif;
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
 
     #logo-container {
 
@@ -83,8 +85,8 @@ nav {
                 cursor: pointer;
             }
         }
-    }
 
+    }
 
 }
 </style>

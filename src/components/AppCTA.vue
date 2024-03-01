@@ -17,18 +17,22 @@ export default {
 
 <template>
     <div class="cta">
-        <div>
-            <button>sign-up now!</button>
-        </div>
+        <div class="container">
+
+            <div>
+                <button>sign-up now!</button>
+            </div>
 
 
-        <div class="links">
-            <span>follow us</span>
-            <ul>
-                <li v-for="currentLink in links">
-                    <img :src="currentLink" alt="">
-                </li>
-            </ul>
+            <div class="links">
+                <span>follow us</span>
+                <ul>
+                    <li v-for="currentLink in links">
+                        <img :src="currentLink" alt="">
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
     </div>
@@ -39,12 +43,8 @@ export default {
 
 .cta {
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
     background-color: $secondaryColorLight;
-    padding: 30px $containerPadding;
+    padding: 20px 0;
 
     button {
         padding: 16px;
@@ -63,28 +63,34 @@ export default {
 
     }
 
-    .links {
+    .container {
 
         display: flex;
+        justify-content: space-between;
         align-items: center;
 
-        span {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-weight: 700;
-            color: $primaryColor;
-            text-transform: uppercase;
-        }
+        .links {
 
-        ul {
             display: flex;
             gap: 20px;
 
-            li {
+            span {
+                color: $primaryColor;
+                text-transform: uppercase;
+                font-family: 'Barlow Condensed', sans-serif;
+                font-size: 1.3em;
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 18px;
                 list-style-type: none;
 
-                &:hover {
+                li:hover {
                     cursor: pointer;
                 }
+
             }
         }
     }

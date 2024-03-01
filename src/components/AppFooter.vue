@@ -1,6 +1,13 @@
 <script>
+import AppFeature from './AppFeature.vue';
+
 export default {
     name: 'AppFooter',
+
+    components: {
+        AppFeature,
+    },
+
     data() {
         return {
             links: [
@@ -59,18 +66,21 @@ export default {
 </script>
 
 <template>
+    <AppFeature></AppFeature>
     <footer>
-        <div class="links">
-            <div v-for="linkList in links" class="links-list">
-                <h3>{{ linkList.title }}</h3>
-                <ul>
-                    <li v-for="currentLink in linkList.list">
-                        {{ currentLink }}
-                    </li>
-                </ul>
+        <div class="container">
+            <div class="links">
+                <div v-for="linkList in links" class="links-list">
+                    <h3>{{ linkList.title }}</h3>
+                    <ul>
+                        <li v-for="currentLink in linkList.list">
+                            {{ currentLink }}
+                        </li>
+                    </ul>
+                </div>
             </div>
+            <img src="/img/dc-logo-bg.png" alt="">
         </div>
-        <img src="/img/dc-logo-bg.png" alt="">
     </footer>
 </template>
 
@@ -78,41 +88,54 @@ export default {
 @use '../styles/variables' as *;
 
 footer {
-    display: flex;
-    justify-content: space-between;
 
-    height: 345px;
-    padding: 40px $containerPadding;
+    height: 370px;
+
     background-image: url('/img/footer-bg.jpg');
-    background-size: cover;
+    background-position: cover;
 
     overflow: hidden;
+
+    ul {
+        list-style: none;
+        margin-bottom: 24px;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        height: 100%;
+    }
 
 
     .links {
 
         display: flex;
-        flex-direction: column;
-        column-gap: 32px;
-        flex-wrap: wrap;
+        flex-flow: column wrap;
+        align-content: flex-start;
+        gap: 20px 30px;
+
+        height: 100%;
+
+        padding: 48px 0;
 
         .links-list {
 
             z-index: 1;
 
             h3 {
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-transform: uppercase;
+                font-family: 'Barlow Condensed', sans-serif;
 
-                margin-bottom: 12px;
+                margin-bottom: 10px;
             }
 
             ul {
 
-                padding: 0;
-                margin-bottom: 24px;
-
                 li {
-                    list-style-type: none;
                     color: #959595;
                     font-size: 14px;
 
@@ -121,15 +144,8 @@ footer {
                         cursor: pointer;
                     }
                 }
-
-
             }
-
         }
-    }
-
-    img {
-        transform: scale(1.5);
     }
 
 }

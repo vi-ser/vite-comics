@@ -3,7 +3,7 @@ export default {
     name: 'AppFeature',
     data() {
         return {
-            icons: [
+            features: [
                 {
                     img: '/img/buy-comics-digital-comics.png',
                     text: 'digital comics'
@@ -32,52 +32,53 @@ export default {
 </script>
 
 <template>
-    <section id="icons">
-        <div v-for="(currentItem, index) in icons" class="icon-item">
-            <img :class="{ 'last-icon': index === icons.length - 1 }" :src="currentItem.img" alt="">
-            <span>{{ currentItem.text }}</span>
+    <div id="blue-features">
+        <div class="container">
+            <div class="row">
+
+                <div v-for="currentFeature in features" class="col">
+                    <img :src="currentFeature.img" alt="Buy digital comics">
+                    <span>{{ currentFeature.text }}</span>
+                </div>
+
+            </div>
         </div>
-    </section>
+    </div>
 </template>
 
 <style lang="scss">
 @use '../styles/variables' as *;
 
-#icons {
-    display: flex;
-    justify-content: center;
-    gap: 36px;
-
-    padding: 50px 0;
-
+#blue-features {
     background-color: $primaryColor;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 500;
 
-    .icon-item {
-
+    .row {
         display: flex;
-        gap: 16px;
-
+        justify-content: center;
         align-items: center;
+        gap: 60px;
 
-        font-size: 14px;
-        font-weight: 500;
+        padding: 50px;
 
-        img {
+        .col {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
             height: 55px;
-            width: auto;
 
-            &.last-icon {
-                width: 55px;
-                height: auto;
+            span {
+                white-space: nowrap;
+            }
+
+            img {
+                max-width: 55px;
+                height: 100%;
             }
         }
-
-        span {
-            text-transform: uppercase;
-        }
-
     }
-
-
 }
 </style>
