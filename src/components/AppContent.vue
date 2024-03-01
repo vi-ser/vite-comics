@@ -1,13 +1,18 @@
 <script>
 
+import HeroItem from './HeroItem.vue';
+
 export default {
     name: 'AppContent',
+    components: {
+        HeroItem,
+    }
 }
 </script>
 
 <template>
+    <HeroItem></HeroItem>
     <div id="content">
-        <h2>Content goes here</h2>
     </div>
 </template>
 
