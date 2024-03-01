@@ -98,7 +98,7 @@ footer {
 
     ul {
         list-style: none;
-        margin-bottom: 24px;
+        margin-bottom: 12px;
         padding: 0;
     }
 
@@ -120,7 +120,7 @@ footer {
 
         height: 100%;
 
-        padding: 48px 0;
+        padding: 40px 0;
 
         .links-list {
 
@@ -137,7 +137,7 @@ footer {
 
                 li {
                     color: #959595;
-                    font-size: 14px;
+                    font-size: 12px;
 
                     &:hover {
                         color: white;
