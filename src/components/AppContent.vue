@@ -95,8 +95,12 @@ export default {
     <HeroItem></HeroItem>
     <div id="content">
         <div class="container">
+            <div class="current-series">
+                <span>current series</span>
+            </div>
             <ComicsItem v-for="currentComics in comics" :comicsTitle="currentComics.series"
                 :comicsImage="currentComics.thumb"></ComicsItem>
+            <button>load more</button>
         </div>
     </div>
 </template>
@@ -112,8 +116,47 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        position: relative;
 
+        .current-series {
+            position: absolute;
 
+            top: -30px;
+            left: 0;
+
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            padding: 6px 32px;
+
+            background-color: $primaryColor;
+            color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 60px;
+
+            border-radius: 0%;
+            border: none;
+
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            background-color: $primaryColor;
+
+            &:hover {
+                cursor: pointer;
+                background-color: white;
+                color: $primaryColor;
+                transition: .3s;
+            }
+
+        }
     }
 
 }

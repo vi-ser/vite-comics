@@ -30,5 +30,10 @@ export default {
         text-transform: uppercase;
         font-size: 0.8em;
     }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 }
 </style>
