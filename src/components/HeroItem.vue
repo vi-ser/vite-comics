@@ -17,6 +17,6 @@ export default {
     height: 400px;
 
     background-image: url('img/jumbotron.jpg');
-    background-position-x: center;
+    background-size: cover;
 }
 </style>
